@@ -9,25 +9,26 @@
 import UIKit
 
 class BountyViewController: UIViewController {
+    
     let nameList = ["brook", "chopper", "franky", "luffy", "nami", "robin", "sanji", "zoro"]
     let bountyList = [33000000, 50, 44000000, 300000000, 16000000, 80000000, 77000000, 120000000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // DetailViewController에게 데이터 주기
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as? DetailViewController
+            
+            if let index = sender as? Int {
+                vc?.name = nameList[index]
+                vc?.bounty = bountyList[index]
+            }
+        }
     }
-    */
 
 }
 
@@ -49,21 +50,12 @@ extension BountyViewController: UITableViewDataSource,  UITableViewDelegate {
         cell.nameLabel.text = nameList[indexPath.row]
         cell.bountyLabel.text = "\(bountyList[indexPath.row])"
         return cell
-        
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell {
-//            let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
-//            cell.imageView?.image = img
-//            cell.nameLabel.text = nameList[indexPath.row]
-//            cell.bountyLabel.text = "\(bountyList[indexPath.row])"
-//            return cell
-//        } else {
-//            return UITableViewCell()
-//        }
     }
     
     // UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("---> \(indexPath.row)")
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
     }
 }
 

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AppleMusicSt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eFo-9n-JcI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gWy-0o-jFp">
+                                    <size key="itemSize" width="192" height="260"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrackCollectionViewCell" id="dZ4-NL-EAS" customClass="TrackCollectionViewCell" customModule="AppleMusicSt" customModuleProvider="target">
+                                        <rect key="frame" x="111" y="20" width="192" height="260"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6h9-7f-45e">
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="260"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0GC-2p-rGk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="192"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="0GC-2p-rGk" secondAttribute="height" multiplier="1:1" id="K9S-a7-3sc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 KIDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-dv-EXC">
+                                                    <rect key="frame" x="0.0" y="202" width="192" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태민" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8e-oG-ht6">
+                                                    <rect key="frame" x="0.0" y="231" width="192" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0GC-2p-rGk" firstAttribute="top" secondItem="6h9-7f-45e" secondAttribute="top" id="MMc-uJ-yx2"/>
+                                                <constraint firstItem="Q8e-oG-ht6" firstAttribute="top" secondItem="tTa-dv-EXC" secondAttribute="bottom" constant="5" id="UAa-Z3-Nvz"/>
+                                                <constraint firstItem="tTa-dv-EXC" firstAttribute="leading" secondItem="0GC-2p-rGk" secondAttribute="leading" id="UJZ-ek-CAT"/>
+                                                <constraint firstItem="0GC-2p-rGk" firstAttribute="leading" secondItem="6h9-7f-45e" secondAttribute="leading" id="Ug5-wP-RDk"/>
+                                                <constraint firstItem="Q8e-oG-ht6" firstAttribute="trailing" secondItem="tTa-dv-EXC" secondAttribute="trailing" id="Vzr-Qg-8xl"/>
+                                                <constraint firstItem="tTa-dv-EXC" firstAttribute="top" secondItem="0GC-2p-rGk" secondAttribute="bottom" constant="10" id="aFY-sp-yCO"/>
+                                                <constraint firstAttribute="trailing" secondItem="0GC-2p-rGk" secondAttribute="trailing" id="dWI-ao-fnH"/>
+                                                <constraint firstItem="Q8e-oG-ht6" firstAttribute="leading" secondItem="tTa-dv-EXC" secondAttribute="leading" id="gzR-Pg-iNA"/>
+                                                <constraint firstItem="tTa-dv-EXC" firstAttribute="trailing" secondItem="0GC-2p-rGk" secondAttribute="trailing" id="x7R-gs-N3h"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="192" height="260"/>
+                                        <connections>
+                                            <outlet property="trackArtist" destination="Q8e-oG-ht6" id="FpD-Qh-2ji"/>
+                                            <outlet property="trackThumbnail" destination="0GC-2p-rGk" id="Ef2-3D-AKy"/>
+                                            <outlet property="trackTitle" destination="tTa-dv-EXC" id="FfR-UU-Noj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sK6-QH-bzd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4W6-j9-gZk"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eFo-9n-JcI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="20x-ha-6Us"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eFo-9n-JcI" secondAttribute="trailing" id="Bgk-tz-U3k"/>
+                            <constraint firstItem="eFo-9n-JcI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qIT-Zx-P1q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eFo-9n-JcI" secondAttribute="bottom" id="zlc-pN-Qac"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>

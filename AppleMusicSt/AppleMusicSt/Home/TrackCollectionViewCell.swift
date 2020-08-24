@@ -16,12 +16,17 @@ class TrackCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         trackThumbnail.layer.cornerRadius = 8
-        trackArtist.textColor = UIColor.systemGray2
+        trackArtist.textColor = UIColor.systemGray
     }
     
-    /*
-    func updateUI(<#parameters#>) {
+    func updateUI(item: Track?) {
         // TODO: 곡 정보 표시하기
+        guard let track = item else {
+            return
+        }
+        
+        trackThumbnail.image = track.artwork
+        trackTitle.text = track.title
+        trackArtist.text = track.artist
     }
-     */
 }

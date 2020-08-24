@@ -30,6 +30,9 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+//        let item = trackManager(at: indexPath.item)
+//        cell.updateUI(item: item)
+        
         return cell
     }
     

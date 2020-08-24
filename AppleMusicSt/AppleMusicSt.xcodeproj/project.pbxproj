@@ -14,6 +14,7 @@
 		1E7188D424F3DACB00802650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7188D324F3DACB00802650 /* Assets.xcassets */; };
 		1E7188D724F3DACB00802650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7188D524F3DACB00802650 /* LaunchScreen.storyboard */; };
 		1EC6843B24F4054800B14444 /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6843A24F4054800B14444 /* TrackCollectionViewCell.swift */; };
+		1EC6843E24F40EFA00B14444 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6843D24F40EFA00B14444 /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1E7188D624F3DACB00802650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E7188D824F3DACB00802650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EC6843A24F4054800B14444 /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		1EC6843D24F40EFA00B14444 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +61,13 @@
 			isa = PBXGroup;
 			children = (
 				1EC6843924F403D700B14444 /* Home */,
+				1EC6843C24F40EC600B14444 /* Track */,
 				1E7188CA24F3DACA00802650 /* AppDelegate.swift */,
 				1E7188CC24F3DACA00802650 /* SceneDelegate.swift */,
 				1E7188D324F3DACB00802650 /* Assets.xcassets */,
 				1E7188D524F3DACB00802650 /* LaunchScreen.storyboard */,
 				1E7188D824F3DACB00802650 /* Info.plist */,
+				1EC6843F24F4123200B14444 /* Resources */,
 			);
 			path = AppleMusicSt;
 			sourceTree = "<group>";
@@ -76,6 +80,21 @@
 				1EC6843A24F4054800B14444 /* TrackCollectionViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		1EC6843C24F40EC600B14444 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				1EC6843D24F40EFA00B14444 /* Track.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		1EC6843F24F4123200B14444 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EC6843B24F4054800B14444 /* TrackCollectionViewCell.swift in Sources */,
+				1EC6843E24F40EFA00B14444 /* Track.swift in Sources */,
 				1E7188CF24F3DACA00802650 /* HomeViewController.swift in Sources */,
 				1E7188CB24F3DACA00802650 /* AppDelegate.swift in Sources */,
 				1E7188CD24F3DACA00802650 /* SceneDelegate.swift in Sources */,

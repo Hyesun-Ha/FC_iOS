@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    let trackManager: TrackManager = TrackManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,8 +31,8 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-//        let item = trackManager(at: indexPath.item)
-//        cell.updateUI(item: item)
+        let item = trackManager.track(at: indexPath.item)
+        cell.updateUI(item: item)
         
         return cell
     }

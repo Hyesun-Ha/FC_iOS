@@ -58,6 +58,18 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     // 클릭 했을 때 동작
     // TODO: 곡 클릭시 플레이어뷰 띄우기
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let playerStoryBoard = UIStoryboard.init(name: "Player", bundle: nil)
+        
+        guard let playerVC = playerStoryBoard.instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController else {
+            return
+        }
+        
+        let item = trackManager.tracks[indexPath.item]
+        playerVC.simplePlayer.replaceCurrentItem(with: item)
+        
+        present(playerVC, animated: true, completion: nil)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

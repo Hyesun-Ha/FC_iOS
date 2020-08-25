@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E556E6B24F52F38003FBBF8 /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E556E6A24F52F38003FBBF8 /* Player.storyboard */; };
+		1E556E6D24F52F6E003FBBF8 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E556E6C24F52F6E003FBBF8 /* PlayerViewController.swift */; };
+		1E556E7024F53789003FBBF8 /* DefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E556E6F24F53789003FBBF8 /* DefaultStyle.swift */; };
+		1E556E7224F53829003FBBF8 /* SimplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E556E7124F53829003FBBF8 /* SimplePlayer.swift */; };
 		1E7188CB24F3DACA00802650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7188CA24F3DACA00802650 /* AppDelegate.swift */; };
 		1E7188CD24F3DACA00802650 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7188CC24F3DACA00802650 /* SceneDelegate.swift */; };
 		1E7188CF24F3DACA00802650 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7188CE24F3DACA00802650 /* HomeViewController.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E556E6A24F52F38003FBBF8 /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		1E556E6C24F52F6E003FBBF8 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		1E556E6F24F53789003FBBF8 /* DefaultStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStyle.swift; sourceTree = "<group>"; };
+		1E556E7124F53829003FBBF8 /* SimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePlayer.swift; sourceTree = "<group>"; };
 		1E7188C724F3DACA00802650 /* AppleMusicSt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicSt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7188CA24F3DACA00802650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E7188CC24F3DACA00802650 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E556E6924F52F1A003FBBF8 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				1E556E6A24F52F38003FBBF8 /* Player.storyboard */,
+				1E556E6C24F52F6E003FBBF8 /* PlayerViewController.swift */,
+				1E556E7124F53829003FBBF8 /* SimplePlayer.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		1E556E6E24F53764003FBBF8 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				1E556E6F24F53789003FBBF8 /* DefaultStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		1E7188BE24F3DACA00802650 = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				1EC6843924F403D700B14444 /* Home */,
+				1E556E6924F52F1A003FBBF8 /* Player */,
 				1EC6843C24F40EC600B14444 /* Track */,
+				1E556E6E24F53764003FBBF8 /* Style */,
 				1E7188CA24F3DACA00802650 /* AppDelegate.swift */,
 				1E7188CC24F3DACA00802650 /* SceneDelegate.swift */,
 				1E7188D324F3DACB00802650 /* Assets.xcassets */,
@@ -235,6 +263,7 @@
 				1EA29E3824F4BBA500CC5CCA /* Ocean ride __ 海の乗り.mp3 in Resources */,
 				1EA29E2924F4BBA500CC5CCA /* i fell in love with you one night in september..mp3 in Resources */,
 				1EA29E3424F4BBA500CC5CCA /* distant moon (spotify apple etc).mp3 in Resources */,
+				1E556E6B24F52F38003FBBF8 /* Player.storyboard in Resources */,
 				1EA29E2E24F4BBA500CC5CCA /* valentin.mp3 in Resources */,
 				1E7188D724F3DACB00802650 /* LaunchScreen.storyboard in Resources */,
 				1EA29E3624F4BBA500CC5CCA /* night calls.mp3 in Resources */,
@@ -265,11 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E556E7224F53829003FBBF8 /* SimplePlayer.swift in Sources */,
 				1EA29E0D24F4B74200CC5CCA /* Extension+AVPlayerItem.swift in Sources */,
 				1EC6843B24F4054800B14444 /* TrackCollectionViewCell.swift in Sources */,
 				1EC6844124F4145700B14444 /* TrackManager.swift in Sources */,
 				1EC6843E24F40EFA00B14444 /* Track.swift in Sources */,
 				1E7188CF24F3DACA00802650 /* HomeViewController.swift in Sources */,
+				1E556E7024F53789003FBBF8 /* DefaultStyle.swift in Sources */,
+				1E556E6D24F52F6E003FBBF8 /* PlayerViewController.swift in Sources */,
 				1E7188CB24F3DACA00802650 /* AppDelegate.swift in Sources */,
 				1E7188CD24F3DACA00802650 /* SceneDelegate.swift in Sources */,
 				1EA29E3B24F4C7C400CC5CCA /* TrackCollectionHeaderView.swift in Sources */,

@@ -36,6 +36,7 @@
 		1EA29E3724F4BBA500CC5CCA /* always you.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EA29E2124F4BBA400CC5CCA /* always you.mp3 */; };
 		1EA29E3824F4BBA500CC5CCA /* Ocean ride __ 海の乗り.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EA29E2224F4BBA400CC5CCA /* Ocean ride __ 海の乗り.mp3 */; };
 		1EA29E3924F4BBA500CC5CCA /* Sleepless.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1EA29E2324F4BBA400CC5CCA /* Sleepless.mp3 */; };
+		1EA29E3B24F4C7C400CC5CCA /* TrackCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA29E3A24F4C7C400CC5CCA /* TrackCollectionHeaderView.swift */; };
 		1EC6843B24F4054800B14444 /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6843A24F4054800B14444 /* TrackCollectionViewCell.swift */; };
 		1EC6843E24F40EFA00B14444 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6843D24F40EFA00B14444 /* Track.swift */; };
 		1EC6844124F4145700B14444 /* TrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC6844024F4145700B14444 /* TrackManager.swift */; };
@@ -73,6 +74,7 @@
 		1EA29E2124F4BBA400CC5CCA /* always you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "always you.mp3"; sourceTree = "<group>"; };
 		1EA29E2224F4BBA400CC5CCA /* Ocean ride __ 海の乗り.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ocean ride __ 海の乗り.mp3"; sourceTree = "<group>"; };
 		1EA29E2324F4BBA400CC5CCA /* Sleepless.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sleepless.mp3; sourceTree = "<group>"; };
+		1EA29E3A24F4C7C400CC5CCA /* TrackCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionHeaderView.swift; sourceTree = "<group>"; };
 		1EC6843A24F4054800B14444 /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EC6843D24F40EFA00B14444 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		1EC6844024F4145700B14444 /* TrackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackManager.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				1E7188D024F3DACA00802650 /* Main.storyboard */,
 				1E7188CE24F3DACA00802650 /* HomeViewController.swift */,
+				1EA29E3A24F4C7C400CC5CCA /* TrackCollectionHeaderView.swift */,
 				1EC6843A24F4054800B14444 /* TrackCollectionViewCell.swift */,
 			);
 			path = Home;
@@ -269,6 +272,7 @@
 				1E7188CF24F3DACA00802650 /* HomeViewController.swift in Sources */,
 				1E7188CB24F3DACA00802650 /* AppDelegate.swift in Sources */,
 				1E7188CD24F3DACA00802650 /* SceneDelegate.swift in Sources */,
+				1EA29E3B24F4C7C400CC5CCA /* TrackCollectionHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

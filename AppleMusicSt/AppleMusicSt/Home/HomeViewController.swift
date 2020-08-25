@@ -14,8 +14,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -37,6 +35,24 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     // TODO: 헤더 뷰 작성
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TrackCollectionHeaderView", for: indexPath) as? TrackCollectionHeaderView else {
+                return UICollectionReusableView()
+            }
+            
+            guard let item = trackManager.todaysTrack else {
+                return UICollectionReusableView()
+            }
+            
+            header.update(with: item)
+            
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {

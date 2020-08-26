@@ -18,6 +18,16 @@ class SimplePlayer {
         return player.currentItem
     }
     
+    var currentTime: Double {
+        // TODO: currentTime 구하기
+        return player.currentItem?.currentTime().seconds ?? 0
+    }
+    
+    var totalDurationTime: Double {
+        // TODO: totalDurationTime 구하기
+        return player.currentItem?.duration.seconds ?? 0
+    }
+    
     var isPlaying: Bool {
         return player.isPlaying
     }
@@ -32,6 +42,10 @@ class SimplePlayer {
     
     func replaceCurrentItem(with Item: AVPlayerItem?) {
         player.replaceCurrentItem(with: Item)
+    }
+    
+    func addPeriodicTimeObserver(forInterval: CMTime, queue: DispatchQueue?, using: @escaping (CMTime) -> Void) {
+        player.addPeriodicTimeObserver(forInterval: forInterval, queue: queue, using: using)
     }
 }
 

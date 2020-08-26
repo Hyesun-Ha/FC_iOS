@@ -25,6 +25,7 @@ class PlayerViewController: UIViewController {
     let simplePlayer = SimplePlayer.shared
     
     var isSeeking: Bool = false
+    var timeObserver: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,9 @@ class PlayerViewController: UIViewController {
         updatePlayButton()
         updateTime(time: CMTime.zero) // 위치 이동?
         // TODO: TimeObserver 구현
+        timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10), queue: DispatchQueue.main) { time in
+            self.updateTime(time: time)
+        }
     }
     
     
@@ -44,6 +48,8 @@ class PlayerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // TODO: 뷰나갈때 처리 > 심플플레이어
+        simplePlayer.pause()
+        simplePlayer.replaceCurrentItem(with: nil)
     }
 
     @IBAction func togglePlayButton(_ sender: UIButton) {
@@ -53,7 +59,6 @@ class PlayerViewController: UIViewController {
         }else {
             simplePlayer.play()
         }
-        
         updatePlayButton()
     }
     
@@ -78,17 +83,15 @@ extension PlayerViewController {
     
     func updateTime(time: CMTime) {
         // currentTime label, totalduration label, slider
-        
         // TODO: 시간정보 업데이트, 심플플레이어 이용해서 수정
-        currentTimeLabel.text = secondsToString(sec: 0.0)   // 3.1234 >> 00:03
-        totalDurationLabel.text = secondsToString(sec: 0.0)  // 39.2045  >> 00:39
+        currentTimeLabel.text = secondsToString(sec: simplePlayer.currentTime)   // 3.1234 >> 00:03
+        totalDurationLabel.text = secondsToString(sec: simplePlayer.totalDurationTime)  // 39.2045  >> 00:39
         
         if isSeeking == false {
             // 노래 들으면서 시킹하면, 자꾸 슬라이더가 업데이트 됨, 따라서 시킹아닐때마 슬라이더 업데이트하자
             // TODO: 슬라이더 정보 업데이트
+            timeSlider.value = Float(simplePlayer.currentTime / simplePlayer.totalDurationTime)
         }
-        
-        
     }
     
     func secondsToString(sec: Double) -> String {

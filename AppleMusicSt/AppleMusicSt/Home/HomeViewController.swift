@@ -48,6 +48,18 @@ extension HomeViewController: UICollectionViewDataSource {
             
             header.update(with: item)
             
+            // 헤더 뷰의 썸네일을 클릭했을 떄 동작
+            header.tapHandler = { item in
+                let playerStoryBoard = UIStoryboard.init(name: "Player", bundle: nil)
+                
+                guard let playerVC = playerStoryBoard.instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController else {
+                    return
+                }
+            
+                playerVC.simplePlayer.replaceCurrentItem(with: item)
+                self.present(playerVC, animated: true, completion: nil)
+            }
+            
             return header
         default:
             return UICollectionReusableView()

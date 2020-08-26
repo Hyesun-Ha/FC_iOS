@@ -14,6 +14,7 @@ class TrackCollectionHeaderView: UICollectionReusableView {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     var item: AVPlayerItem?
+    var tapHandler: ((AVPlayerItem) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +30,12 @@ class TrackCollectionHeaderView: UICollectionReusableView {
         
         self.thumbnailImageView.image = track.artwork
         self.descriptionLabel.text = "Today's pick is \(track.artist)'s album - \(track.albumName), Let's listen."
+    }
+    
+    @IBAction func cardTapped(_ sender: UIButton) {
+        guard let todaysItem = item else {
+            return
+        }
+        tapHandler?(todaysItem)
     }
 }

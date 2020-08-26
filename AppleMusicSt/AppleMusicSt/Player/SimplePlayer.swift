@@ -9,7 +9,6 @@
 import AVFoundation
 
 class SimplePlayer {
-    // TODO: 싱글톤 만들기, 왜 만드는가?
     static let shared = SimplePlayer()
     
     private let player = AVPlayer()
@@ -19,12 +18,10 @@ class SimplePlayer {
     }
     
     var currentTime: Double {
-        // TODO: currentTime 구하기
         return player.currentItem?.currentTime().seconds ?? 0
     }
     
     var totalDurationTime: Double {
-        // TODO: totalDurationTime 구하기
         return player.currentItem?.duration.seconds ?? 0
     }
     

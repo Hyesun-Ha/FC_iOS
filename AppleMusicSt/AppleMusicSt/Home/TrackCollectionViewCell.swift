@@ -20,7 +20,6 @@ class TrackCollectionViewCell: UICollectionViewCell {
     }
     
     func updateUI(item: Track?) {
-        // TODO: 곡 정보 표시하기
         guard let track = item else {
             return
         }

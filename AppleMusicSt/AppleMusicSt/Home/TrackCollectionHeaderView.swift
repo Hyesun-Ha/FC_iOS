@@ -18,6 +18,7 @@ class TrackCollectionHeaderView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         thumbnailImageView.layer.cornerRadius = 8
     }
     
@@ -36,6 +37,7 @@ class TrackCollectionHeaderView: UICollectionReusableView {
         guard let todaysItem = item else {
             return
         }
+        
         tapHandler?(todaysItem)
     }
 }

@@ -18,12 +18,10 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO: 트랙매니저에서 트랙갯수 가져오기
         return trackManager.tracks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: 셀 구성하기
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrackCollectionViewCell", for: indexPath) as? TrackCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -34,7 +32,6 @@ extension HomeViewController: UICollectionViewDataSource {
         return cell
     }
     
-    // TODO: 헤더 뷰 작성
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
@@ -47,8 +44,6 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             
             header.update(with: item)
-            
-            // 헤더 뷰의 썸네일을 클릭했을 떄 동작
             header.tapHandler = { item in
                 let playerStoryBoard = UIStoryboard.init(name: "Player", bundle: nil)
                 
@@ -68,8 +63,6 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    // 클릭 했을 때 동작
-    // TODO: 곡 클릭시 플레이어뷰 띄우기
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let playerStoryBoard = UIStoryboard.init(name: "Player", bundle: nil)
         
@@ -85,8 +78,6 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    // 컬렉션뷰의 사이즈
-    // TODO: 셀사이즈 구하기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let margin: CGFloat = 20
         let spacing: CGFloat = 20

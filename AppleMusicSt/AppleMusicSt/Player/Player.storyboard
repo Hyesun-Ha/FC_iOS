@@ -44,6 +44,9 @@
                                 <state key="normal" image="play.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40" scale="default"/>
                                 </state>
+                                <connections>
+                                    <action selector="togglePlayButton:" destination="oaA-bh-sjm" eventType="touchUpInside" id="N0Z-K8-4Ga"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvE-tI-e0a">
                                 <rect key="frame" x="20" y="702" width="39" height="17"/>

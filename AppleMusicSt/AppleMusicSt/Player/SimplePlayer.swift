@@ -8,7 +8,8 @@
 
 import AVFoundation
 
-class SimplePlayer: NSObject {
+class SimplePlayer {
+    // TODO: 싱글톤 만들기, 왜 만드는가?
     static let shared = SimplePlayer()
     
     private let player = AVPlayer()
@@ -17,7 +18,29 @@ class SimplePlayer: NSObject {
         return player.currentItem
     }
     
+    var isPlaying: Bool {
+        return player.isPlaying
+    }
+    
+    func play() {
+        player.play()
+    }
+    
+    func pause() {
+        player.pause()
+    }
+    
     func replaceCurrentItem(with Item: AVPlayerItem?) {
         player.replaceCurrentItem(with: Item)
+    }
+}
+
+extension AVPlayer {
+    var isPlaying : Bool {
+        guard self.currentItem != nil else {
+            return false
+        }
+        
+        return self.rate != 0
     }
 }

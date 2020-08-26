@@ -34,6 +34,11 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="l37-hm-eCW">
                                 <rect key="frame" x="18" y="662" width="378" height="31"/>
+                                <connections>
+                                    <action selector="beginDrag:" destination="oaA-bh-sjm" eventType="editingDidBegin" id="GRX-Th-wmy"/>
+                                    <action selector="endDrag:" destination="oaA-bh-sjm" eventType="editingDidEnd" id="FY1-38-27n"/>
+                                    <action selector="seek:" destination="oaA-bh-sjm" eventType="valueChanged" id="iXO-2v-OIz"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENE-Nk-SD7">
                                 <rect key="frame" x="179.5" y="737" width="55" height="55"/>

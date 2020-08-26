@@ -31,24 +31,29 @@ class PlayerViewController: UIViewController {
         super.viewDidLoad()
         
         updatePlayButton()
-        updateTime(time: CMTime.zero) // 위치 이동?
+        updateTime(time: CMTime.zero)
         // TODO: TimeObserver 구현
         timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10), queue: DispatchQueue.main) { time in
             self.updateTime(time: time)
         }
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateTintColor()
         updateTrackInfo()
+        
+        simplePlayer.play()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // TODO: 뷰나갈때 처리 > 심플플레이어
         simplePlayer.pause()
+        
+        let startTime = CMTime(seconds: 0, preferredTimescale: 1)
+        
+        simplePlayer.seek(to: startTime)
         simplePlayer.replaceCurrentItem(with: nil)
     }
 
@@ -62,6 +67,25 @@ class PlayerViewController: UIViewController {
         updatePlayButton()
     }
     
+    @IBAction func beginDrag(_ sender: UISlider) {
+        isSeeking = true
+    }
+    
+    @IBAction func endDrag(_ sender: UISlider) {
+        isSeeking = false
+    }
+    
+    @IBAction func seek(_ sender: UISlider) {
+        guard let currentItem = simplePlayer.currentItem else {
+            return
+        }
+        
+        let position = Double(sender.value)
+        let seconds = currentItem.duration.seconds * position
+        let time = CMTime(seconds: seconds, preferredTimescale: 100)
+        
+        simplePlayer.seek(to: time)
+    }
 }
 
 extension PlayerViewController {

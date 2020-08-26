@@ -40,6 +40,10 @@ class SimplePlayer {
         player.pause()
     }
     
+    func seek(to time: CMTime) {
+        player.seek(to: time)
+    }
+    
     func replaceCurrentItem(with Item: AVPlayerItem?) {
         player.replaceCurrentItem(with: Item)
     }

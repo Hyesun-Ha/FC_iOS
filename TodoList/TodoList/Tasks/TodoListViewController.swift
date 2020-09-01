@@ -9,21 +9,65 @@
 import UIKit
 
 class TodoListViewController: UIViewController {
-
+    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var isTodayButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
+    
+    
+    let todoListViewModel = TodoViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @IBAction func isTodayButtonTapped(_ sender: UIButton) {
+        isTodayButton.isSelected = !isTodayButton.isSelected
+    }
+    
+    // TODO: AddTaskButton
+    @IBAction func addTaskButtonTapped(_ sender: Any) {
     }
 
+    @IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
+        inputTextField.resignFirstResponder()
+    }
+}
 
+extension TodoListViewController {
+    @objc private func adjustInputView(noti: Notification) {
+        guard let userInfo = noti.userInfo else {
+            return
+        }
+        
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        if noti.name == UIResponder.keyboardWillShowNotification {
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            inputViewBottom.constant = adjustmentHeight
+        } else {
+            inputViewBottom.constant = 0
+        }
+    }
 }
 
 extension TodoListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return todoListViewModel.numOfSection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        if section == 0 {
+            return todoListViewModel.todayTodos.count
+        } else {
+            return todoListViewModel.upcomingTodos.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -32,7 +76,6 @@ extension TodoListViewController: UICollectionViewDataSource {
         }
         
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -53,10 +96,6 @@ extension TodoListViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
     }
-}
-
-extension TodoListViewController: UICollectionViewDelegate {
-    
 }
 
 extension TodoListViewController: UICollectionViewDelegateFlowLayout {

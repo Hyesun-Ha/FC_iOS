@@ -22,4 +22,22 @@ class TodoViewModel {
             }
         }
     }
+    
+    private let manager = TodoManager.shared
+    
+    var numOfSection: Int {
+        return Section.allCases.count
+    }
+    
+    var todos: [Todo] {
+        return manager.todos
+    }
+    
+    var todayTodos: [Todo] {
+        return todos.filter { $0.isToday == true }
+    }
+    
+    var upcomingTodos: [Todo] {
+        return todos.filter { $0.isToday == false }
+    }
 }

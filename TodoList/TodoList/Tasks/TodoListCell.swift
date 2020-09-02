@@ -36,16 +36,18 @@ class TodoListCell: UICollectionViewCell {
         strikeThroughWidth.constant = show ? descriptionLabel.bounds.width : 0
     }
     
-    // TODO: reset로직 구현
     func reset() {
         descriptionLabel.alpha = 1
         deleteButton.isHidden = true
         showStrikeThrough(false)
     }
     
-    
-    // TODO: checkButton 처리
     @IBAction func checkButtonTapped(_ sender: UIButton) {
+        checkButton.isSelected = !checkButton.isSelected
+        let isDone = checkButton.isSelected
+        descriptionLabel.alpha = isDone ? 0.2 : 1
+        deleteButton.isHidden = !isDone
+        doneButtonTapHandler?(isDone)
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIButton) {

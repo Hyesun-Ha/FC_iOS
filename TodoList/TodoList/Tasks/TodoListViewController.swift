@@ -44,6 +44,7 @@ class TodoListViewController: UIViewController {
         
         inputTextField.text = ""
         isTodayButton.isSelected = false
+        inputTextField.resignFirstResponder()
     }
 
     @IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
@@ -99,18 +100,14 @@ extension TodoListViewController: UICollectionViewDataSource {
             todo = todoListViewModel.upcomingTodos[indexPath.item]
         }
         
-        // TODO: todo 를 이용해서 updateUI
         cell.updateUI(todo: todo)
         
-        // TODO: doneButtonHandler 작성
         cell.doneButtonTapHandler = { isDone in
             todo.isDone = isDone
             self.todoListViewModel.updateTodo(todo)
             self.collectionView.reloadData()
-            
         }
         
-        // TODO: deleteButtonHandler 작성
         cell.deleteButtonTapHandler = {
             self.todoListViewModel.deleteTodo(todo)
             self.collectionView.reloadData()

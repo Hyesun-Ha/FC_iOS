@@ -9,28 +9,41 @@
 import UIKit
 
 class TodoListViewController: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var isTodayButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     
-    
     let todoListViewModel = TodoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        todoListViewModel.loadTasks()
     }
+    
     
     @IBAction func isTodayButtonTapped(_ sender: UIButton) {
         isTodayButton.isSelected = !isTodayButton.isSelected
     }
     
-    // TODO: AddTaskButton
     @IBAction func addTaskButtonTapped(_ sender: Any) {
+        guard let detail = inputTextField.text else {
+            return
+        }
+        
+        let todo = TodoManager.shared.createTodo(detail: detail, isToday: isTodayButton.isSelected)
+        
+        todoListViewModel.addTodo(todo)
+        collectionView.reloadData()
+        
+        inputTextField.text = ""
+        isTodayButton.isSelected = false
     }
 
     @IBAction func tapBackground(_ sender: UITapGestureRecognizer) {
@@ -71,8 +84,36 @@ extension TodoListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // TODO: 커스텀 셀
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoListCell", for: indexPath) as? TodoListCell else {
+            
             return UICollectionViewCell()
+        }
+        
+        
+        var todo: Todo
+        
+        if indexPath.section == 0 {
+            todo = todoListViewModel.todayTodos[indexPath.item]
+        } else {
+            todo = todoListViewModel.upcomingTodos[indexPath.item]
+        }
+        
+        // TODO: todo 를 이용해서 updateUI
+        cell.updateUI(todo: todo)
+        
+        // TODO: doneButtonHandler 작성
+        cell.doneButtonTapHandler = { isDone in
+            todo.isDone = isDone
+            self.todoListViewModel.updateTodo(todo)
+            self.collectionView.reloadData()
+            
+        }
+        
+        // TODO: deleteButtonHandler 작성
+        cell.deleteButtonTapHandler = {
+            self.todoListViewModel.deleteTodo(todo)
+            self.collectionView.reloadData()
         }
         
         return cell

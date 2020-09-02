@@ -40,4 +40,20 @@ class TodoViewModel {
     var upcomingTodos: [Todo] {
         return todos.filter { $0.isToday == false }
     }
+    
+    func addTodo(_ todo: Todo) {
+        manager.addTodo(todo)
+    }
+    
+    func deleteTodo(_ todo: Todo) {
+        manager.deleteTodo(todo)
+    }
+    
+    func updateTodo(_ todo: Todo) {
+        manager.updateTodo(todo)
+    }
+    
+    func loadTasks() {
+        manager.retrieveTodo()
+    }
 }

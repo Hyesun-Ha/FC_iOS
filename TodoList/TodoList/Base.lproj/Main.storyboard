@@ -44,6 +44,9 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                     </state>
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="checkButtonTapped:" destination="UEZ-vq-MGz" eventType="touchUpInside" id="CJs-3O-FLD"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👻 Weekly iOS Meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ8-6n-2Kl">
                                                     <rect key="frame" x="71" y="34.5" width="298" height="21"/>
@@ -69,6 +72,9 @@
                                                     <state key="normal" image="xmark.circle.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="deleteButtonTapped:" destination="UEZ-vq-MGz" eventType="touchUpInside" id="w7j-Vj-EjG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -89,6 +95,7 @@
                                             <outlet property="deleteButton" destination="Bk9-eH-WeR" id="sjg-pt-k4r"/>
                                             <outlet property="descriptionLabel" destination="uJ8-6n-2Kl" id="9Ke-0g-pia"/>
                                             <outlet property="strikeThroughView" destination="Gaq-yf-YLq" id="b27-9L-C08"/>
+                                            <outlet property="strikeThroughWidth" destination="efK-LD-Irf" id="kgc-2h-qlP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -120,7 +127,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-Ha-w0E">
                                 <rect key="frame" x="0.0" y="753" width="414" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="I want to..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-Uj-Mxz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="I want to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-Uj-Mxz">
                                         <rect key="frame" x="8" y="13" width="290" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -189,6 +196,7 @@
                     <tabBarItem key="tabBarItem" title="Tasks" image="checkmark.circle" catalog="system" selectedImage="checkmark.circle.fill" id="gfg-Oi-Krf"/>
                     <connections>
                         <outlet property="addButton" destination="XNr-WD-LGt" id="C9E-eW-Cay"/>
+                        <outlet property="collectionView" destination="myt-fi-yVW" id="zlV-GY-dOF"/>
                         <outlet property="inputTextField" destination="Bff-Uj-Mxz" id="ucE-Nk-J5O"/>
                         <outlet property="inputViewBottom" destination="otO-El-gEE" id="8jZ-9P-Rr9"/>
                         <outlet property="isTodayButton" destination="eK9-Rz-Zt8" id="iE3-Wh-Yn1"/>

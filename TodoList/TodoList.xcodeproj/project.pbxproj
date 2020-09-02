@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2852B624FF4BDF0080E48D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2852B524FF4BDF0080E48D /* Storage.swift */; };
 		1E689E0924FCA7F70060E4B3 /* TodoListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E689E0824FCA7F70060E4B3 /* TodoListHeaderView.swift */; };
 		1E689E0B24FCA8470060E4B3 /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E689E0A24FCA8470060E4B3 /* TodoListCell.swift */; };
 		1E689E0D24FD2A730060E4B3 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E689E0C24FD2A730060E4B3 /* TodoViewModel.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E2852B524FF4BDF0080E48D /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		1E689E0824FCA7F70060E4B3 /* TodoListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListHeaderView.swift; sourceTree = "<group>"; };
 		1E689E0A24FCA8470060E4B3 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
 		1E689E0C24FD2A730060E4B3 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				1E689E0E24FD59980060E4B3 /* Todo.swift */,
 				1E689E0C24FD2A730060E4B3 /* TodoViewModel.swift */,
 				1E689E1024FD5B360060E4B3 /* TodoManager.swift */,
+				1E2852B524FF4BDF0080E48D /* Storage.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				1E8B7C9024FA297F00785239 /* TodoListViewController.swift in Sources */,
 				1E689E0B24FCA8470060E4B3 /* TodoListCell.swift in Sources */,
 				1E689E0924FCA7F70060E4B3 /* TodoListHeaderView.swift in Sources */,
+				1E2852B624FF4BDF0080E48D /* Storage.swift in Sources */,
 				1E689E1124FD5B360060E4B3 /* TodoManager.swift in Sources */,
 				1E8B7C8C24FA297F00785239 /* AppDelegate.swift in Sources */,
 				1E8B7C8E24FA297F00785239 /* SceneDelegate.swift in Sources */,

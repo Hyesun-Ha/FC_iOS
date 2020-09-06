@@ -46,7 +46,7 @@ class TodoManager {
     }
     
     func saveTodo() {
-        
+        Storage.store(todos, to: .documents, as: "todos.json")
     }
     
     func retrieveTodo() {

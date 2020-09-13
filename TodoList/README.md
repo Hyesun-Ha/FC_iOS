@@ -16,7 +16,7 @@
       (is done 상태일 경우 cell의 삭제가 가능합니다.)
 2. Settings tab
     - Inset Grouped Style을 적용해 보았습니다.
-- 추가된 data들은 local에 저장됩니다. App을 재실행 할 경우 이전의 data를 불러옵니다.
+- 추가된 data들은 local에 저장되며, cell의 상태 변화가 있을 시 변경 사항들이 update됩니다. App을 재실행 할 경우 이전의 data를 불러옵니다.
 ---
 블로그에도 공부한 내용들을 기록해 보았습니다.  
 - [TodoList App 복습6 + Codable = Encodable + Decodable](https://blog.naver.com/hahye3/222082709394).

@@ -1,4 +1,4 @@
-# Ch12. TodoList App
+# Ch13. TodoList App
 
 강의를 듣고 TodoList App을 혼자 다시 만들어보며 복습하였습니다.   
 

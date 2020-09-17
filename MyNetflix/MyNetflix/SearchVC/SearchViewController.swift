@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultCollectionView: UICollectionView!
     
+    var movies: [Movie] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
     }
 }
 
@@ -29,30 +31,42 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         dissmissKeyboard()
         
-        // 검색어가 있는지 확인
         guard let searchTerm = searchBar.text, searchTerm.isEmpty == false else {
             return
         }
         
-        // 네트워킹을 통한 검색
-        // - 최종 목표: searchTerm 을 가지고 네트워킹을 통해 검색
-        // - [] 검색 API가 필요
-        // - [] 검색 모델을 받아올 모델 Movie, Response
-        // - [] 검색 결과를 받아와서 Collectionview로 표현
+        print("---> 검색어: \(String(describing: searchBar.text))")
         
+        SearchAPI.search(searchTerm){ movies in
+            print("총 개수: \(movies.count), 첫 번째 영화 제목: \(String(describing: movies.first?.title))")
+            
+            DispatchQueue.main.async {
+                self.movies = movies
+                self.resultCollectionView.reloadData()
+            }
+        }
     }
 }
 
 // MARK: CollectionView
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = resultCollectionView.dequeueReusableCell(withReuseIdentifier: "ResultCell", for: indexPath) as? ResultCell else {
                 return UICollectionViewCell()
         }
+        
+        let movie = movies[indexPath.item]
+        
+        guard let thumbnailURL = URL(string: movie.thumbnailPath) else {
+            return UICollectionViewCell()
+        }
+        
+        cell.movieThumbnail.kf.setImage(with: thumbnailURL)
+        
         return cell
     }
 }

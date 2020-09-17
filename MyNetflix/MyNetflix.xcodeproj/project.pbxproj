@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,24 @@
 		1E7236CA2508774F0084516C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7236C82508774F0084516C /* Main.storyboard */; };
 		1E7236CC250877500084516C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7236CB250877500084516C /* Assets.xcassets */; };
 		1E7236CF250877500084516C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7236CD250877500084516C /* LaunchScreen.storyboard */; };
+		1E7B8F5A25131B6100EE77FA /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B8F5925131B6100EE77FA /* SearchAPI.swift */; };
+		1E7B8F5F2513307100EE77FA /* KingfisherDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7B8F5E2513307100EE77FA /* KingfisherDynamic */; };
+		1E7B8F602513307100EE77FA /* KingfisherDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1E7B8F5E2513307100EE77FA /* KingfisherDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1E7B8F612513307100EE77FA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1E7B8F602513307100EE77FA /* KingfisherDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E3045D425126C4F00CD2F6F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +43,7 @@
 		1E7236CB250877500084516C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E7236CE250877500084516C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E7236D0250877500084516C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E7B8F5925131B6100EE77FA /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7B8F5F2513307100EE77FA /* KingfisherDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				1E3045D6251275DE00CD2F6F /* SearchViewController.swift */,
+				1E7B8F5925131B6100EE77FA /* SearchAPI.swift */,
 			);
 			path = SearchVC;
 			sourceTree = "<group>";
@@ -88,12 +108,16 @@
 				1E7236BB2508774F0084516C /* Sources */,
 				1E7236BC2508774F0084516C /* Frameworks */,
 				1E7236BD2508774F0084516C /* Resources */,
+				1E7B8F612513307100EE77FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MyNetflix;
+			packageProductDependencies = (
+				1E7B8F5E2513307100EE77FA /* KingfisherDynamic */,
+			);
 			productName = MyNetflix;
 			productReference = 1E7236BF2508774F0084516C /* MyNetflix.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 1E7236B62508774F0084516C;
+			packageReferences = (
+				1E7B8F5D2513307100EE77FA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1E7236C02508774F0084516C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7B8F5A25131B6100EE77FA /* SearchAPI.swift in Sources */,
 				1E7236C32508774F0084516C /* AppDelegate.swift in Sources */,
 				1E7236C52508774F0084516C /* SceneDelegate.swift in Sources */,
 				1E3045D7251275DE00CD2F6F /* SearchViewController.swift in Sources */,
@@ -348,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E7B8F5D2513307100EE77FA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E7B8F5E2513307100EE77FA /* KingfisherDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E7B8F5D2513307100EE77FA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E7236B72508774F0084516C /* Project object */;
 }

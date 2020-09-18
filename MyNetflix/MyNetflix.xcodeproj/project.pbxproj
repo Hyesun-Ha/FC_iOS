@@ -17,6 +17,9 @@
 		1E7B8F5A25131B6100EE77FA /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B8F5925131B6100EE77FA /* SearchAPI.swift */; };
 		1E7B8F5F2513307100EE77FA /* KingfisherDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7B8F5E2513307100EE77FA /* KingfisherDynamic */; };
 		1E7B8F602513307100EE77FA /* KingfisherDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1E7B8F5E2513307100EE77FA /* KingfisherDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		1E7B8F642514930F00EE77FA /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B8F632514930F00EE77FA /* Player.storyboard */; };
+		1E7B8F662514941D00EE77FA /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B8F652514941D00EE77FA /* PlayerViewController.swift */; };
+		1E7B8F6825149B0900EE77FA /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B8F6725149B0900EE77FA /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +47,9 @@
 		1E7236CE250877500084516C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E7236D0250877500084516C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E7B8F5925131B6100EE77FA /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		1E7B8F632514930F00EE77FA /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		1E7B8F652514941D00EE77FA /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		1E7B8F6725149B0900EE77FA /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E3045D82512782500CD2F6F /* SearchVC */ = {
+		1E3045D82512782500CD2F6F /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				1E3045D6251275DE00CD2F6F /* SearchViewController.swift */,
 				1E7B8F5925131B6100EE77FA /* SearchAPI.swift */,
 			);
-			path = SearchVC;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		1E7236B62508774F0084516C = {
@@ -90,12 +96,23 @@
 				1E7236C42508774F0084516C /* SceneDelegate.swift */,
 				1E7236C82508774F0084516C /* Main.storyboard */,
 				1E3045D425126C4F00CD2F6F /* HomeViewController.swift */,
-				1E3045D82512782500CD2F6F /* SearchVC */,
+				1E3045D82512782500CD2F6F /* Search */,
 				1E7236CB250877500084516C /* Assets.xcassets */,
+				1E7B8F62251492F800EE77FA /* Player */,
 				1E7236CD250877500084516C /* LaunchScreen.storyboard */,
 				1E7236D0250877500084516C /* Info.plist */,
 			);
 			path = MyNetflix;
+			sourceTree = "<group>";
+		};
+		1E7B8F62251492F800EE77FA /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				1E7B8F632514930F00EE77FA /* Player.storyboard */,
+				1E7B8F652514941D00EE77FA /* PlayerViewController.swift */,
+				1E7B8F6725149B0900EE77FA /* PlayerView.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E7236CF250877500084516C /* LaunchScreen.storyboard in Resources */,
+				1E7B8F642514930F00EE77FA /* Player.storyboard in Resources */,
 				1E7236CC250877500084516C /* Assets.xcassets in Resources */,
 				1E7236CA2508774F0084516C /* Main.storyboard in Resources */,
 			);
@@ -178,9 +196,11 @@
 			files = (
 				1E7B8F5A25131B6100EE77FA /* SearchAPI.swift in Sources */,
 				1E7236C32508774F0084516C /* AppDelegate.swift in Sources */,
+				1E7B8F6825149B0900EE77FA /* PlayerView.swift in Sources */,
 				1E7236C52508774F0084516C /* SceneDelegate.swift in Sources */,
 				1E3045D7251275DE00CD2F6F /* SearchViewController.swift in Sources */,
 				1E3045D525126C4F00CD2F6F /* HomeViewController.swift in Sources */,
+				1E7B8F662514941D00EE77FA /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

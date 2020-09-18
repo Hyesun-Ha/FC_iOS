@@ -244,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="124.55357142857142"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="51h-pf-Q0T">
             <objects>
                 <viewController id="Nri-jr-lEL" sceneMemberID="viewController">
@@ -254,13 +254,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WyT-Jt-CCp"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="zQc-B0-74t"/>
+                    <tabBarItem key="tabBarItem" title="" id="zQc-B0-74t"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luf-nr-B4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1270" y="125"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="SFp-I5-bDE">
             <objects>
                 <viewController id="3B9-EO-a33" sceneMemberID="viewController">
@@ -270,13 +270,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="KN9-R0-bi8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="z9C-bK-dY1"/>
+                    <tabBarItem key="tabBarItem" title="" id="z9C-bK-dY1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aU5-D7-7eg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1270" y="957"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="W92-M8-mmD">
             <objects>
                 <viewController id="w5d-gv-5ua" sceneMemberID="viewController">
@@ -286,7 +286,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="c88-2x-mQc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="UTT-ok-A1d"/>
+                    <tabBarItem key="tabBarItem" title="" id="UTT-ok-A1d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMT-35-PfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

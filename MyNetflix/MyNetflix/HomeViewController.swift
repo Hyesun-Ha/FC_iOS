@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
 
@@ -20,17 +21,27 @@ class HomeViewController: UIViewController {
         // Miffy에 대한 정보를 검색 API로 가져온다.
         // 거기서 Miffy 객체 하나를 가져온다.
         // 그 객체를 이용해서 PlayerViewController를 띄운다
+        SearchAPI.search("Miffy") {
+            movies in
+            guard let miffy = movies.first else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                guard let url = URL(string: miffy.previewURL) else {
+                    return
+                }
+                
+                let item = AVPlayerItem(url: url)
+                
+                let sb = UIStoryboard(name: "Player", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "PlayerViewController") as! PlayerViewController
+                
+                vc.player.replaceCurrentItem(with: item)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

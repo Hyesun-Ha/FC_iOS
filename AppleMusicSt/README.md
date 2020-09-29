@@ -20,5 +20,5 @@
 
 [AppleMusicSt App 복습4 + 앱 실행 영상](https://blog.naver.com/hahye3/222072089139).  
 [AppleMusicSt App 복습3 + isNaN](https://blog.naver.com/hahye3/2220713948789).  
-[AppleMusicSt App 복습2 + Singleton](https://blog.naver.com/hahye3/222070939599).  
+[AppleMusicSt App 복습2 + Singleton Pattern](https://blog.naver.com/hahye3/222070939599).  
 [AppleMusicSt App 복습1](https://blog.naver.com/hahye3/222070421134).
